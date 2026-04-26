@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual env
+venv/
+.env/
+.env.*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Secrets / credentials
+google-credentials.json
+*.json
+
+# Alembic cache
+alembic/__pycache__/
+alembic/versions/__pycache__/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Build / dist
+build/
+dist/
+*.egg-info/
+
+# Docker
+*.env.docker
+
+# Misc
+*.sqlite3
