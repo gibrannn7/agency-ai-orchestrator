@@ -72,6 +72,9 @@ async def background_workflow_b(payload_dict: dict, db: AsyncSession):
         if final_state.clickup_synced:
             html = f"<h1>Welcome, {final_state.client_name}!</h1><p>Your project is kicking off. We have set up your workspace.</p>"
             await brevo_service.send_email(final_state.client_email, final_state.client_name, "Welcome to the Agency!", html)
+
+            msg = f"<b>Project Won!</b>\nClient: {final_state.client_name}\nProject: {final_state.project_name}\nTasks successfully synced to ClickUp."
+            await telegram_service.send_message(msg)
             
     except Exception as e:
         logger.error(f"Error in background_workflow_b: {str(e)}")
